@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "lib": ["es2020", "dom"],
+    "types": ["cypress", "node"],
+    "isolatedModules": true
+  },
+  "include": [
+    "cypress/e2e/**/*.ts",
+    "cypress/support/**/*.ts",
+    "cypress/support/*.ts"
+  ]
+}
