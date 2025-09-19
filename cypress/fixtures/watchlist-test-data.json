@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "manufacturer": "T. Rowe Price",
+    "model": "Dividend Growth Fund"
+  },
+  {
+    "id": "2",
+    "manufacturer": "T. Rowe Price",
+    "model": "Blue Chip Growth Fund"
+  },
+  {
+    "id": "3",
+    "manufacturer": "Vanguard",
+    "model": "Stategic Small-Cap Equity"
+  },
+  {
+    "id": "4",
+    "manufacturer": "Vanguard",
+    "model": "Selected Value"
+  },
+  {
+    "id": "5",
+    "manufacturer": "Vanguard",
+    "model": "Global Credit Bond"
+  },
+  {
+    "id": "6",
+    "manufacturer": "Vanguard",
+    "model": "Dividend Growth"
+  },
+  {
+    "id": "7",
+    "manufacturer": "Vanguard",
+    "model": "500 Index Admiral Shares"
+  }
+]

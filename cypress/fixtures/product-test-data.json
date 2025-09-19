@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "manufacturer": "T. Rowe Price",
+    "model": "Dividend Growth Fund",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "2",
+    "manufacturer": "T. Rowe Price",
+    "model": "Blue Chip Growth Fund",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "4",
+    "manufacturer": "T. Rowe Price",
+    "model": "Communications \u0026 Technology Fund",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "5",
+    "manufacturer": "T. Rowe Price",
+    "model": "Large-Cap Growth Fund",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "6",
+    "manufacturer": "Vanguard",
+    "model": "Dividend Growth",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "7",
+    "manufacturer": "Vanguard",
+    "model": "500 Index Admiral Shares",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "8",
+    "manufacturer": "Vanguard",
+    "model": "Windsor",
+    "price": 1,
+    "numberInStock": 1
+  },
+  {
+    "id": "9",
+    "manufacturer": "Vanguard",
+    "model": "Explorer Value",
+    "price": 1,
+    "numberInStock": 1
+  }
+]
