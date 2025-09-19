@@ -16,10 +16,7 @@ module.exports = defineConfig({
           plugins: [createEsbuildPlugin(config)],
         })
       );
-      
-      // The correction is to pass both 'on' and 'config' to the allureCypress function.
-      allureCypress(on, config); 
-      
+      allureCypress(on);
       return config;
     },
     cucumberJson: {
