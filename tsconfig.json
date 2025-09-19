@@ -11,6 +11,7 @@
   "include": [
     "cypress/e2e/**/*.ts",
     "cypress/support/**/*.ts",
-    "cypress/support/*.ts"
+    "cypress/support/*.ts", 
+    "cypress/support/e2e.ts"
   ]
 }
