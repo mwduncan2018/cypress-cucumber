@@ -1,3 +1,4 @@
+@demo
 Feature: Getting Started
 
     Scenario: Simple Scenario

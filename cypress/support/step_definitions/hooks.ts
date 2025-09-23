@@ -1,5 +1,5 @@
 import { Before, After } from '@badeball/cypress-cucumber-preprocessor';
-import { Product } from '../models/Product';
+import { Product } from '../models/product.model';
 
 Before(() => {
   cy.clearCookies();
@@ -9,7 +9,7 @@ Before(() => {
   })
   cy.wrap({}).as('context')
 
-  cy.visit('http://localhost:5096/ProductList')
+  cy.visit('/ProductList')
 });
 
 After(() => {

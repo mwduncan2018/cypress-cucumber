@@ -1,3 +1,4 @@
+@demo
 Feature: Page Object Model
 
     Scenario: Using POM to verify product is displayed

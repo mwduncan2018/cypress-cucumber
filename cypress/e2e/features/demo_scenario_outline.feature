@@ -1,3 +1,4 @@
+@demo
 Feature: Scenario Outline
 
     Scenario: Data driven scenario

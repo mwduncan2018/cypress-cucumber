@@ -1,3 +1,4 @@
+@demo
 Feature: Scenario Context
 
     Scenario: Pass data across step definitions using scenario context

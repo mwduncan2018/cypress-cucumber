@@ -1,3 +1,4 @@
+@demo
 Feature: Multiple Scenarios
 
     Scenario: Simple Scenario
