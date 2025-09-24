@@ -1,6 +1,6 @@
 # cypress-cucumber
 
-### Allure Reports
+## Allure Reports
 
 ###### INSTALL - https://allurereport.org/docs/install/
 
@@ -10,9 +10,9 @@
 
 ###### SERVE - allure serve allure-results
 
-### Docker
+## Docker
 
-###### Within cypress.config.js, change baseUrl to http://host.docker.internal:5096 when building a new image
+###### Within cypress.config.js, change baseUrl to http://host.docker.internal:5096 when building a new image.
 
 ##### Execute with Powershell
 
