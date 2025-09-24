@@ -12,7 +12,7 @@
 
 ### Docker
 
-##### Within cypress.config.js, change baseUrl to http://host.docker.internal:5096 when building a new image
+###### Within cypress.config.js, change baseUrl to http://host.docker.internal:5096 when building a new image
 
 ##### Execute with Powershell
 
