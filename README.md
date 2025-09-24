@@ -18,8 +18,8 @@
 
 ##### Execute with Powershell
 
-###### docker run -v "$(Get-Location)/allure-results:/e2e/allure-results" cypress-duncan:1.0
+###### docker run -v "$(Get-Location)/allure-results:/e2e/allure-results" -v "$(Get-Location)/cypress/videos:/e2e/cypress/videos" -v "$(Get-Location)/cypress/screenshots:/e2e/cypress/screenshots" cypress-duncan:1.0
 
 ##### On Windows, execute with GitBash
 
-###### docker run -v "$(cygpath -w "$PWD/allure-results")":/e2e/allure-results cypress-duncan:1.0
+###### docker run -v "$(cygpath -w "$PWD/allure-results")":/e2e/allure-results -v "$(cygpath -w "$PWD/cypress/videos")":/e2e/cypress/videos -v "$(cygpath -w "$PWD/cypress/screenshots")":/e2e/cypress/screenshots cypress-duncan:1.0
