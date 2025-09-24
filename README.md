@@ -8,7 +8,7 @@
 
 ###### GENERATE (allure-report directory is created) - allure generate allure-results --clean -o allure-report
 
-###### SERVE (Opens report) - allure serve allure-results
+###### SERVE (Opens report) - allure open
 
 ###### GENERATE & SERVE SHORTCUT (generates report to temp directory and opens report) - allure serve
 
