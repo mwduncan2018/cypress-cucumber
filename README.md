@@ -1,17 +1,11 @@
 # cypress-cucumber
 
-### Basic setup of a scenario
+#### Allure Reports
 
-### Basic setup of a scenario outline
+###### INSTALL - https://allurereport.org/docs/install/
 
-### Setting up the equivalent of scenario context using Cypress aliases and a dictionary
+###### EXECUTE - npx cypress run
 
-### Handling test data with Cypress fixtures
+###### GENERATE - allure generate allure-results --clean -o allure-report
 
-### Reporting with Allure
-
-##### Execute: npm run cypress
-
-##### Generate Report: npm run allure:generate
-
-##### Run Report Server: npm run allure:serve
+###### SERVE - allure serve allure-results
