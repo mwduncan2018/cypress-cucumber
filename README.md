@@ -10,7 +10,7 @@
 
 ###### SERVE (Opens report) - allure serve allure-results
 
-###### GENERATE & SERVE (generates report to temp directory and opens report) - allure serve
+###### GENERATE & SERVE SHORTCUT (generates report to temp directory and opens report) - allure serve
 
 ## Docker
 
