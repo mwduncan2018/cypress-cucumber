@@ -19,8 +19,12 @@ COPY cypress.config.js .
 CMD ["cypress", "run", "--browser", "chrome"]
 
 
-# Execute with Powershell
+# Execute with Powershell, execute all tests
 # docker run -v "$(Get-Location)/allure-results:/e2e/allure-results" cypress-duncan:1.0
 
-# Execute with GitBash
+# Execute with Powershell, execute a specific feature
+# docker run -v "$(Get-Location)/allure-results:/e2e/allure-results" cypress-duncan:1.0 cypress run --env tags="@contact"
+
+# Execute with GitBash, execute all tests
 # docker run -v "//d/dev/typescript/cypress-cucumber-02/allure-results":/e2e/allure-results cypress-duncan:1.0
+
