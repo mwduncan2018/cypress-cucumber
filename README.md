@@ -4,13 +4,13 @@
 
 ###### INSTALL - https://allurereport.org/docs/install/
 
-###### EXECUTE - npx cypress run
+###### EXECUTE TESTS (allure-results directory is created) - npx cypress run
 
-###### GENERATE - allure generate allure-results --clean -o allure-report
+###### GENERATE (allure-report directory is created) - allure generate allure-results --clean -o allure-report
 
-###### SERVE - allure serve allure-results
+###### SERVE (Opens report) - allure serve allure-results
 
-###### GENERATE AND SERVE (generates report to temp directory and opens report) - allure serve
+###### GENERATE & SERVE (generates report to temp directory and opens report) - allure serve
 
 ## Docker
 
