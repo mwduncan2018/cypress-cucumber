@@ -1,5 +1,7 @@
 import { Before, After } from '@badeball/cypress-cucumber-preprocessor';
 
+
+// Before Each Scenario
 Before(() => {
   cy.clearCookies();
   cy.clearLocalStorage();
@@ -8,10 +10,11 @@ Before(() => {
   cy.visit('/ProductList')
 });
 
+
+// After Each Scenario
 After(() => {
-  cy.get('@context').then((context) => {
-    Object.entries(context).forEach(([k, v]) => {
-        cy.log(`${k}: ${v}`)
-    })
+  cy.get<{}>('@context').then((context: {[key: string]: any}) => {
+
+    cy.screenshot();
   })
 });
