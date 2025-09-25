@@ -2,6 +2,7 @@
 @contact
 Feature: Contact
 
+    @smoke
     Scenario: Duncan safe product
         When the Contact page is viewed
         Then the following text should display in the footer
