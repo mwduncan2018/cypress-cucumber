@@ -24,15 +24,13 @@ Then('a product can be created', () => {
 Then('a product can be edited', () => {
     cy.get<{}>('@context').then((context: {[key: string]: any}) => {
         const product: Models.Product = context['product'];
-
-        Pages.navbarPage.goToProductList();
-        Pages.productListPage.edit(product);
-
         product.manufacturer += ' Test Manufacturer';
         product.model += ' Test Model';
         product.price += 1;
         product.numberInStock += 1;
 
+        Pages.navbarPage.goToProductList();
+        Pages.productListPage.edit(product);
         Pages.productEditPage.edit(product);
         Pages.productListPage.verifyProductIsDisplayed(product);
     });

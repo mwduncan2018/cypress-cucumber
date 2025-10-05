@@ -15,6 +15,5 @@ Before(() => {
 After(() => {
   cy.get<{}>('@context').then((context: {[key: string]: any}) => {
 
-    cy.screenshot();
   })
 });
