@@ -1,0 +1,70 @@
+/*
+Configuration for reports with videos, screenshots, and scenario steps:
+1) Use the cypress.config.js below
+2) commands.ts must have this at the top - 
+    import "cypress-mochawesome-reporter/register";
+3) cypress/support/hooks/init.ts must have this at the top -
+    import "cypress-mochawesome-reporter/cucumberSupport"; // Cucumber step level reporting
+4) package.json must have these dependencies - 
+    @badeball/cypress-cucumber-preprocessor
+    @bahmutov/cypress-esbuild-preprocessor
+    @types/lodash
+    cypress
+    cypress-mochawesome-reporter
+    cypress-on-fix
+    dayjs // nice to have
+    lodash // nice to have
+    typescript
+
+*/
+
+const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
+const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor");
+const cypressOnFix = require("cypress-on-fix");
+
+module.exports = defineConfig({
+    reporter: "cypress-mochawesome-reporter",
+    reporterOptions: {
+        reportDir: "cypress/results",
+        charts: true,
+        reportPageTitle: "My Test Report",
+        embeddedScreenshots: true,
+        inlineAssets: true,
+        saveAllAttempts: false,
+        videoOnFailOnly: true,
+    },
+    defaultCommandTimeout: 30000,
+    video: true,
+
+    e2e: {
+        injectDocumentDomain: false,
+        screenshotOnRunFailure: true,
+        specPattern: "cypress/features/**/*.feature",
+        fixturesFolder: "cypress/support/fixtures",
+        supportFile: "cypress/support/commands/commands.ts",
+
+        async setupNodeEvents(on, config) {
+            const onFixed = cypressOnFix(on);
+            require("cypress-mochawesome-reporter/plugin")(onFixed);
+            await addCucumberPreprocessorPlugin(onFixed, config);
+            onFixed(
+                "file:preprocessor",
+                createBundler({
+                    plugins: [createEsbuildPlugin(config)],
+                })
+            );
+            onFixed(
+                "before:browser:launch", (browser, launchOptions) => {
+                    if (browser.name === "chrome" && browser.isHeadless) {
+                        launchOptions.args.push("--window-size=1400,1200");
+                    }
+                    return launchOptions;
+                }
+            );
+
+            return config;
+        }
+    }
+})
