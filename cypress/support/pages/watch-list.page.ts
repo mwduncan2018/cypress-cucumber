@@ -9,28 +9,28 @@ class WatchListPage {
     private readonly tableDetails = 'td:nth-child(3) a:nth-child(2)';
     private readonly tableDelete = 'td:nth-child(3) a:nth-child(3)';
 
-    public addNewEntry(): void {
-        cy.get(this.btnAddNewEntry).click();
+    public addNewEntry(): Cypress.Chainable<any> {
+        return cy.get(this.btnAddNewEntry).click();
     }
 
-    public edit(entry: WatchListEntry): void {
-        this.getWatchListRow(entry).find(this.tableEdit).click();
+    public edit(entry: WatchListEntry): Cypress.Chainable<any> {
+        return this.getWatchListRow(entry).find(this.tableEdit).click();
     }
 
-    public details(entry: WatchListEntry): void {
-        this.getWatchListRow(entry).find(this.tableDetails).click();
+    public details(entry: WatchListEntry): Cypress.Chainable<any> {
+        return this.getWatchListRow(entry).find(this.tableDetails).click();
     }
 
-    public delete(entry: WatchListEntry): void {
-        this.getWatchListRow(entry).find(this.tableDelete).click();
+    public delete(entry: WatchListEntry): Cypress.Chainable<any> {
+        return this.getWatchListRow(entry).find(this.tableDelete).click();
     }
 
-    public verifyEntryIsDisplayed(entry: WatchListEntry): void {
-        this.getWatchListRow(entry).should('be.visible');
+    public verifyEntryIsDisplayed(entry: WatchListEntry): Cypress.Chainable<any> {
+        return this.getWatchListRow(entry).should('be.visible');
     }
 
-    public verifyEntryIsNotDisplayed(entry: WatchListEntry): void {
-        cy.contains(this.tableManufacturer, entry.manufacturer).should('not.exist');
+    public verifyEntryIsNotDisplayed(entry: WatchListEntry): Cypress.Chainable<any> {
+        return cy.contains(this.tableManufacturer, entry.manufacturer).should('not.exist');
     }
 
     private getWatchListRow(entry: WatchListEntry): Cypress.Chainable<JQuery<HTMLElement>> {

@@ -1,4 +1,0 @@
-import 'allure-cypress';
-
-
-

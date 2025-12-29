@@ -5,10 +5,10 @@ class WatchListEditPage {
     private readonly inputModel = '#Model';
     private readonly btnSave = '.form-group input[value=\'Save\']';
 
-    public edit(entry: WatchListEntry): void {
-        cy.get(this.inputManufacturer).clear().type(entry.manufacturer);
-        cy.get(this.inputModel).clear().type(entry.model);
-        cy.get(this.btnSave).click();
+    public edit(entry: WatchListEntry): Cypress.Chainable<any> {
+        return cy.get(this.inputManufacturer).clear().type(entry.manufacturer)
+            .get(this.inputModel).clear().type(entry.model)
+            .get(this.btnSave).click();
     }
 }
 

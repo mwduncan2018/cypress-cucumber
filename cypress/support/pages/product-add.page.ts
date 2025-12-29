@@ -7,12 +7,12 @@ class ProductAddPage {
     private readonly inputNumberInStock = '#NumberInStock';
     private readonly btnAdd = '.form-group input[value=\'Add\']';
 
-    public addProduct(product: Product): void {
-        cy.get(this.inputManufacturer).type(product.manufacturer);
-        cy.get(this.inputModel).type(product.model);
-        cy.get(this.inputPrice).type(product.price.toString());
-        cy.get(this.inputNumberInStock).type(product.numberInStock.toString());
-        cy.get(this.btnAdd).click();
+    public addProduct(product: Product): Cypress.Chainable<any> {
+        return cy.get(this.inputManufacturer).type(product.manufacturer)
+            .get(this.inputModel).type(product.model)
+            .get(this.inputPrice).type(product.price.toString())
+            .get(this.inputNumberInStock).type(product.numberInStock.toString())
+            .get(this.btnAdd).click();
     }
 }
 

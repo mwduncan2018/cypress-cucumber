@@ -6,11 +6,11 @@ class ProductDetailsPage {
     private readonly detailPrice = 'dl.row dd:nth-child(6)';
     private readonly detailNumberInStock = 'dl.row dd:nth-child(8)';
 
-    public verifyDetailsAreDisplayedFor(product: Product): void {
-        cy.get(this.detailManufacturer).should('contain.text', product.manufacturer);
-        cy.get(this.detailModel).should('contain.text', product.model);
-        cy.get(this.detailPrice).should('contain.text', product.price.toString());
-        cy.get(this.detailNumberInStock).should('contain.text', product.numberInStock.toString());
+    public verifyDetailsAreDisplayedFor(product: Product): Cypress.Chainable<any> {
+        return cy.get(this.detailManufacturer).should('contain.text', product.manufacturer)
+            .get(this.detailModel).should('contain.text', product.model)
+            .get(this.detailPrice).should('contain.text', product.price.toString())
+            .get(this.detailNumberInStock).should('contain.text', product.numberInStock.toString());
     }
 }
 

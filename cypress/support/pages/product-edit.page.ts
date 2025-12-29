@@ -7,12 +7,12 @@ class ProductEditPage {
     private readonly inputNumberInStock = '#NumberInStock';
     private readonly btnSave = '.form-group input[value=\'Save\']';
 
-    public edit(product: Product): void {
-        cy.get(this.inputManufacturer).clear().type(product.manufacturer);
-        cy.get(this.inputModel).clear().type(product.model);
-        cy.get(this.inputPrice).clear().type(product.price.toString());
-        cy.get(this.inputNumberInStock).clear().type(product.numberInStock.toString());
-        cy.get(this.btnSave).click();
+    public edit(product: Product): Cypress.Chainable<any> {
+        return cy.get(this.inputManufacturer).clear().type(product.manufacturer)
+            .get(this.inputModel).clear().type(product.model)
+            .get(this.inputPrice).clear().type(product.price.toString())
+            .get(this.inputNumberInStock).clear().type(product.numberInStock.toString())
+            .get(this.btnSave).click();
     }
 }
 

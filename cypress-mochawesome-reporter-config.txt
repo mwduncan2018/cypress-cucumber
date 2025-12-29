@@ -18,6 +18,8 @@ Configuration for reports with videos, screenshots, and scenario steps:
 
 */
 
+
+
 const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");

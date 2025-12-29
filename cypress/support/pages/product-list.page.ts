@@ -12,60 +12,60 @@ class ProductListPage {
     private readonly tableMatch = 'td:nth-child(1) input';
     private readonly tableFuzzyMatch = 'td:nth-child(7) input';
 
-    public addNewProduct(): void {
-        cy.get(this.btnAddNewProduct).click();
+    public addNewProduct(): Cypress.Chainable<any> {
+        return cy.get(this.btnAddNewProduct).click();
     }
 
-    public enableStandardMatching(): void {
-        cy.get(this.btnFuzzyMatching).then(($button) => {
+    public enableStandardMatching(): Cypress.Chainable<any> {
+        return cy.get(this.btnFuzzyMatching).then(($button) => {
             if ($button.text().includes('Disable')) {
                 cy.wrap($button).click();
             }
         });
     }
 
-    public enableFuzzyMatching(): void {
-        cy.get(this.btnFuzzyMatching).then(($button) => {
+    public enableFuzzyMatching(): Cypress.Chainable<any> {
+        return cy.get(this.btnFuzzyMatching).then(($button) => {
             if (!$button.text().includes('Disable')) {
                 cy.wrap($button).click();
             }
         });
     }
 
-    public edit(product: Product): void {
-        this.getProductRow(product).find(this.tableEdit).click();
+    public edit(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableEdit).click();
     }
 
-    public details(product: Product): void {
-        this.getProductRow(product).find(this.tableDetails).click();
+    public details(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableDetails).click();
     }
 
-    public delete(product: Product): void {
-        this.getProductRow(product).find(this.tableDelete).click();
+    public delete(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableDelete).click();
     }
 
-    public verifyProductIsDisplayed(product: Product): void {
-        this.getProductRow(product).should('be.visible');
+    public verifyProductIsDisplayed(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).should('be.visible');
     }
 
-    public verifyProductIsNotDisplayed(product: Product): void {
-        cy.get(this.tableRows).contains(product.manufacturer).should('not.exist');
+    public verifyProductIsNotDisplayed(product: Product): Cypress.Chainable<any> {
+        return cy.get(this.tableRows).contains(product.manufacturer).should('not.exist');
     }
 
-    public verifyProductIsAMatch(product: Product): void {
-        this.getProductRow(product).find(this.tableMatch).should('be.checked');
+    public verifyProductIsAMatch(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableMatch).should('be.checked');
     }
 
-    public verifyProductIsNotAMatch(product: Product): void {
-        this.getProductRow(product).find(this.tableMatch).should('not.be.checked');
+    public verifyProductIsNotAMatch(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableMatch).should('not.be.checked');
     }
 
-    public verifyProductIsAFuzzyMatch(product: Product): void {
-        this.getProductRow(product).find(this.tableFuzzyMatch).should('be.checked');
+    public verifyProductIsAFuzzyMatch(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableFuzzyMatch).should('not.be.checked'); // deliberate failure 
     }
 
-    public verifyProductIsNotAFuzzyMatch(product: Product): void {
-        this.getProductRow(product).find(this.tableFuzzyMatch).should('not.be.checked');
+    public verifyProductIsNotAFuzzyMatch(product: Product): Cypress.Chainable<any> {
+        return this.getProductRow(product).find(this.tableFuzzyMatch).should('not.be.checked');
     }
     
     private getProductRow(product: Product): Cypress.Chainable<JQuery<HTMLElement>> {
